@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <style>
+    .section-title {
+      font-family: 'Georgia', serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #2c3e50;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #1a252f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="typewriter">Hi, I'm Sharanya Lakshmi..!</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/skills">Skills</a>
+      <a href="/internships">Internships</a>
+      <a href="/certifications">Certifications</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="home-content">
+    <div class="text-section">
+      <section class="intro">
+        <h2 class="section-title">Hi, I'm Sharanya Lakshmi..!</h2>
+        <p>Creative developer passionate about innovation and design. I enjoy building full-stack applications and solving real-world problems through code.</p>
+      </section>
+    </div>
+
+    <div class="image-section">
+      <img src="{{ url_for('static', filename='images/profile.JPEG') }}" alt="Sharanya's Photo" class="profile-pic">
+    </div>
+  </main>
+
+  <div class="button-group">
+    <a href="{{ url_for('static', filename='files/resume.pdf') }}" download class="button">📄 Download Resume</a>
+    <a href="/contact" class="button">📩 Get in Touch</a>
+    <a href="/about" class="button">ℹ️ Know About Me</a>
+  </div>
+
+  <footer style="margin-top: 2rem;">
+    <p align="center">&copy; 2025 Sharanya Lakshmi. All rights reserved.</p>
+    <p align="center">Follow me on 
+      <a href="https://www.linkedin.com/in/sanku-narayana-swami-gari-sharanya-lakshmi-366409251/" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+</body>
+</html>

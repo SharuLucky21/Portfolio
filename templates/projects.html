@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      margin: 0 0.7rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .projects-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .project-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .project-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card-title {
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: #f0f0f0;
+    }
+
+    .project-details {
+      max-width: 700px;
+      margin: 2rem auto;
+      text-align: left;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-details button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .project-details button:hover {
+      background-color: #0056b3;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 950px) {
+      .project-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .project-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script>
+    const projectData = {
+      todo: {
+        title: "ToDo App",
+        description: "A Flask + MongoDB based To-Do application with login system, task filters, and a beautiful UI."
+      },
+      agrorisk: {
+        title: "AgroRisk Monitor",
+        description: "A data-driven dashboard using Flask + Tableau to monitor crop disease risks and weather conditions regionally."
+      },
+      library: {
+        title: "Library Management System",
+        description: "Built with Python Tkinter and MongoDB. Manages books, members, issue/return records with GUI interface."
+      },
+      chatbot: {
+        title: "AI Chatbot",
+        description: "A smart chatbot built using NLP models (Pegasus/BART) that summarizes text, responds to queries, and interacts like a virtual assistant."
+      },
+      replastix: {
+        title: "RePlastix Innovations (Salesforce)",
+        description: "A Salesforce-powered app to manage plastic waste collection, schedule pickups, and analyze sustainability metrics."
+      },
+      acl: {
+        title: "Optimizing Users, Roles & ACLs",
+        description: "ServiceNow-based project to manage access control using business rules, roles, and advanced ACL optimization."
+      }
+    };
+
+    function showDetails(key) {
+      const details = projectData[key];
+      document.getElementById('project-title').textContent = details.title;
+      document.getElementById('project-description').textContent = details.description;
+      document.getElementById('project-list').style.display = 'none';
+      document.getElementById('project-details').style.display = 'block';
+    }
+
+    function goBack() {
+      document.getElementById('project-details').style.display = 'none';
+      document.getElementById('project-list').style.display = 'grid';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1 class="typewriter">My Projects.....</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/skills">Skills</a>
+      <a href="/internships">Internships</a>
+      <a href="/certifications">Certifications</a>
+      <a href="/contact">Contact</a>
+     
+    </nav>
+  </header>
+
+  <main class="projects-section">
+    <h2 class="section-title">My Projects</h2>
+    <div id="project-list" class="project-container">
+      <div class="project-card" onclick="showDetails('todo')">
+        <img src="{{ url_for('static', filename='images/todo.jpg') }}" alt="ToDo App">
+        <div class="project-card-title">ToDo App</div>
+      </div>
+      <div class="project-card" onclick="showDetails('agrorisk')">
+        <img src="{{ url_for('static', filename='images/agrorisk.jpg') }}" alt="AgroRisk Monitor">
+        <div class="project-card-title">AgroRisk Monitor</div>
+      </div>
+      <div class="project-card" onclick="showDetails('library')">
+        <img src="{{ url_for('static', filename='images/library.jpg') }}" alt="Library System">
+        <div class="project-card-title">Library Management</div>
+      </div>
+      <div class="project-card" onclick="showDetails('chatbot')">
+        <img src="{{ url_for('static', filename='images/chatbot.jpg') }}" alt="AI Chatbot">
+        <div class="project-card-title">AI Chatbot</div>
+      </div>
+      <div class="project-card" onclick="showDetails('replastix')">
+        <img src="{{ url_for('static', filename='images/replastix.webp') }}" alt="RePlastix Salesforce">
+        <div class="project-card-title">RePlastix (Salesforce)</div>
+      </div>
+      <div class="project-card" onclick="showDetails('acl')">
+        <img src="{{ url_for('static', filename='images/snpro.png') }}" alt="ACL Optimization">
+        <div class="project-card-title">Users & ACL Optimization</div>
+      </div>
+    </div>
+
+    <div id="project-details" class="project-details" style="display: none;">
+      <h3 id="project-title"></h3>
+      <p id="project-description"></p>
+      <button onclick="goBack()">🔙 Back to Projects</button>
+    </div>
+  </main>
+  <footer>
+  <p align="center">&copy; 2025 Sharanya Lakshmi. All rights reserved.</p>
+  <p align="center">
+    Follow me on 
+    <a href="https://www.linkedin.com/in/sanku-narayana-swami-gari-sharanya-lakshmi-366409251/" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+</body>
+</html>

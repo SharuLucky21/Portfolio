@@ -1,0 +1,58 @@
+<!-- templates/certifications.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+  <header>
+    <h1 class="typewriter">My Certifications...!</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/skills">Skills</a>
+      <a href="/internships">Internships</a>
+      <a href="/certifications">Certifications</a>
+      <a href="/contact">Contact</a>
+      
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="section-title">My Certifications</h2>
+
+    <div class="card-container">
+      <div class="cert-card">
+        <h3>ServiceNow Certified System Administrator</h3>
+        <p>Completed in June 2025<br>Valid through June 2026</p>
+        <a href="{{ url_for('static', filename='files/ServiceNowCSA.pdf') }}" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="cert-card">
+        <h3>ServiceNow Certified Application Developer</h3>
+        <p>Completed in July 2025<br>Valid through July 2026</p>
+        <a href="{{ url_for('static', filename='files/ServiceNowCAD.pdf') }}" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="cert-card">
+        <h3>Zero Trust Cloud Associate</h3>
+        <p>Completed in May 2025<br>Valid through May 2028</p>
+        <a href="{{ url_for('static', filename='files/ztca.pdf') }}" target="_blank">View Certificate</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+  <p align="center">&copy; 2025 Sharanya Lakshmi. All rights reserved.</p>
+  <p align="center">
+    Follow me on 
+    <a href="https://www.linkedin.com/in/sanku-narayana-swami-gari-sharanya-lakshmi-366409251/" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+</body>
+</html>

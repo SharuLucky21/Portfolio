@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internships</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .internship-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .internship-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1.2rem;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .internship-card:hover {
+      transform: scale(1.02);
+    }
+
+    .internship-card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    .internship-details {
+      display: none;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .internship-card.active .internship-details {
+      display: block;
+    }
+
+    @media (max-width: 992px) {
+      .internship-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .internship-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="typewriter">My Internships</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/skills">Skills</a>
+      <a href="/internships">Internships</a>
+      <a href="/certifications">Certifications</a>
+      <a href="/contact">Contact</a>
+      
+    </nav>
+  </header>
+
+  <main>
+    <section class="internship-list">
+      <div class="internship-card" onclick="toggleInternship(this)">
+        <h2>ServiceNow Virtual Internship – SmartInternz</h2>
+        <div class="internship-details">
+          <p><strong>Duration:</strong> Jan 2024 – Mar 2024</p>
+          <p>Worked on ServiceNow fundamentals, flow designer, catalog items, and incident/problem management. Built automation flows and reports using the platform.</p>
+        </div>
+      </div>
+
+
+      <div class="internship-card" onclick="toggleInternship(this)">
+        <h2>Zscaler Virtual Internship</h2>
+        <div class="internship-details">
+          <p><strong>Duration:</strong> Feb 2024 – Mar 2024</p>
+          <p>Completed training modules on cybersecurity fundamentals, Zscaler architecture, and cloud security strategies. Participated in hands-on labs and simulations.</p>
+        </div>
+      </div>
+
+      <div class="internship-card" onclick="toggleInternship(this)">
+        <h2>Web Full Stack Development – Eduskills AICTE</h2>
+        <div class="internship-details">
+          <p><strong>Duration:</strong> Aug 2023 – Nov 2023</p>
+          <p>Worked on HTML, CSS, JavaScript, React, Node.js, and MongoDB. Developed and deployed full-stack projects using REST APIs and GitHub for version control.</p>
+        </div>
+      </div>
+
+      <div class="internship-card" onclick="toggleInternship(this)">
+        <h2>Process Mining Virtual Internship – Eduskills AICTE</h2>
+        <div class="internship-details">
+          <p><strong>Duration:</strong> Dec 2023 – Jan 2024</p>
+          <p>Explored process discovery and conformance checking techniques using Celonis. Gained insights into process optimization and automation analytics.</p>
+        </div>
+      </div>
+
+      <div class="internship-card" onclick="toggleInternship(this)">
+        <h2>Cyber & Data Analytics Simulator – Deloitte</h2>
+        <div class="internship-details">
+          <p><strong>Duration:</strong> Mar 2024 (Simulation Program)</p>
+          <p>Completed a job simulator covering real-world scenarios in cybersecurity analysis, data breach response, and data analytics dashboards using Power BI.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleInternship(card) {
+      card.classList.toggle('active');
+    }
+  </script>
+
+  <footer>
+  <p align="center">&copy; 2025 Sharanya Lakshmi. All rights reserved.</p>
+  <p align="center">
+    Follow me on 
+    <a href="https://www.linkedin.com/in/sanku-narayana-swami-gari-sharanya-lakshmi-366409251/" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+</body>
+</html>

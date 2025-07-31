@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+  <header>
+    <h1 class="typewriter">Get in Touch....!</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/skills">Skills</a>
+      <a href="/internships">Internships</a>
+      <a href="/certifications">Certifications</a>
+      <a href="/contact">Contact</a>
+      
+    </nav>
+  </header>
+
+  <main class="contact-section">
+    <h2 class="section-title">Let’s Connect</h2>
+    <p class="contact-intro">Feel free to reach out for collaborations, project discussions, or just to say hi!</p>
+
+    <div class="contact-container">
+      <!-- Left Side: Info -->
+      <div class="contact-info">
+        <p><strong>📞 Phone:</strong> +91 9032382004</p>
+        <p><strong>📧 Email:</strong> <a href="mailto:snsharanyalakshmi21.com">snsharanyalakshmi21.com</a></p>
+        <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/sanku-narayana-swami-gari-sharanya-lakshmi-366409251/" target="_blank">linkedin.com/in/sharanyalakshmi</a></p>
+        <p><strong>💻 GitHub:</strong> <a href="https://github.com/SharuLucky21" target="_blank">github.com/sharanyalakshmi</a></p>
+      </div>
+
+      <!-- Right Side: Form -->
+      <div class="contact-form">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="/contact">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">📨 Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+  <p align="center">&copy; 2025 Sharanya Lakshmi. All rights reserved.</p>
+  <p align="center">
+    Follow me on 
+    <a href="https://www.linkedin.com/in/sanku-narayana-swami-gari-sharanya-lakshmi-366409251/" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+</body>
+</html>
