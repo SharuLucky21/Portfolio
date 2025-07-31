@@ -31,27 +31,27 @@ A professional and interactive portfolio website built using **Flask**, **HTML**
 
 ## 📁 Folder Structure
 project/
-│
-├── app.py
-├── requirements.txt
-├── Procfile
-│
-├── templates/
-│ ├── index.html
-│ ├── about.html
-│ ├── projects.html
-│ └── contact.html
-│ ...
-│
-├── static/
-│ ├── css/
-│ │ └── style.css
-│ ├── js/
-│ │ └── script.js
-│ ├── images/
-│ │ └── profile.jpeg, bg.jpg, ...
-│ └── files/
-│ └── resume.pdf
+## │
+## ├── app.py
+## ├── requirements.txt
+## ├── Procfile
+## │
+## ├── templates/
+## │ ├── index.html
+## │ ├── about.html
+## │ ├── projects.html
+## │ └── contact.html
+## │ ...
+## │
+## ├── static/
+## │ ├── css/
+## │ │ └── style.css
+## │ ├── js/
+## │ │ └── script.js
+## │ ├── images/
+## │ │ └── profile.jpeg, bg.jpg, ...
+## │ └── files/
+## │ └── resume.pdf
 
 
 ## 📦 Installation & Running Locally
